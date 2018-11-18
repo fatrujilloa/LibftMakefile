@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:11:57 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 16:39:14 by ftrujill         ###   ########.fr       */
+/*   Updated: 2018/11/18 21:03:11 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,21 @@
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t			i;
+	size_t			overlap;
 	unsigned char	uc;
-	char			*cdst;
-	char			*csrc;
+	unsigned char	*cdst;
+	unsigned char	*csrc;
 
 	if (n == 0)
 		return (dst);
-	if (ft_memnlap_fwd(dst, src, n - 1) || ft_memnlap_fwd(src, dst, n - 1))
+	uc = (unsigned char)c;
+    cdst = (unsigned char*)dst;
+    csrc = (unsigned char*)src;
+	i = ft_index_uc(uc, csrc);
+	overlap = i < ft_strlen(src) ? i : n - 1;
+	if (ft_memnlap_fwd(dst, src, i) || ft_memnlap_fwd(src, dst, i))
 		abort();
 	i = 0;
-	uc = c;
-	cdst = (char *)dst;
-	csrc = (char *)src;
 	while (i < n)
 	{
 		cdst[i] = csrc[i];
