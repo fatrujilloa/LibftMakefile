@@ -18,8 +18,9 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	size_t	min;
 
 	i = 0;
-	if (!(min = ft_min_positive(ft_strlen(src), len)))
+	if (!len)
 		return (dst);
+    min = MIN(ft_strlen(src), len);
 	if (ft_memnlap_fwd(dst, src, min))
 		return (dst);
 	while (i < min)

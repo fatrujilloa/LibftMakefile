@@ -17,13 +17,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*cdst;
 	char	*csrc;
 
-	if (!len)
-		return (dst);
-	if (ft_memnlap_fwd(src, dst, len))
-		ft_memcpy(dst, src, len);
+	if (len == 0 || !ft_memnlap_fwd(src, dst, len - 1))
+		return (ft_memcpy(dst, src, len));
 	else
 	{
-		while (len != 0)
+		while (len)
 		{
 			cdst = (char*)dst;
 			csrc = (char*)src;

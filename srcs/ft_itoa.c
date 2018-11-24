@@ -12,6 +12,19 @@
 
 #include "libft.h"
 
+int		ft_size_itoa(int n)
+{
+	int i;
+
+	i = n <= 0 ? 2 : 1;
+	while (n)
+		{
+			n = n / 10;
+			i++;
+		}
+	return (i);
+}
+
 char	*ft_itoa(int n)
 {
 	long	nb;
@@ -19,7 +32,7 @@ char	*ft_itoa(int n)
 	char	sgn;
 	int		i;
 
-	if (!(p = (char*)malloc(12)))
+	if (!(p = (char*)malloc(ft_size_itoa(n))))
 		return (NULL);
 	nb = n;
 	sgn = nb < 0 ? 1 : 0;

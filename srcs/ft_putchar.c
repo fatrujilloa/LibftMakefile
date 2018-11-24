@@ -12,7 +12,30 @@
 
 #include "libft.h"
 
+int     ft_lencharl(unsigned char c)
+{
+    int l;
+
+    l = 0;
+    while (c & 128)
+        {
+            c = c << 1;
+            l++;
+        }
+    return (l);
+}
+
 void	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	int		i;
+	int		l;
+
+	if ((unsigned char)c < 128)
+		{
+			write(1, &c, 1);
+			return ;
+		}
+	i = 0;
+	l = ft_lencharl((unsigned char)c);
+	write (1, &c, l);
 }

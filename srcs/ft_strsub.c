@@ -17,7 +17,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	char	*trunc;
 	size_t	i;
 
-	if (!(trunc = (char*)malloc(len + 1)))
+	if ((!s && len) || !(trunc = (char*)malloc(len + 1)))
 		return (NULL);
 	i = 0;
 	while (i < len)
