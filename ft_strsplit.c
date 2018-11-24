@@ -6,13 +6,13 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/17 18:39:14 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/17 18:49:34 by ftrujill         ###   ########.fr       */
+/*   Updated: 2018/11/24 18:45:11 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_sizetab(char const *s, char c)
+static	size_t	ft_sizetab(char const *s, char c)
 {
 	size_t	i;
 
@@ -28,7 +28,7 @@ size_t	ft_sizetab(char const *s, char c)
 	return (i);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;

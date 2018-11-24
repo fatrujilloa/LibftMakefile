@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/11 17:16:07 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/18 17:52:02 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/24 14:34:15 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/24 18:44:05 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_size_itoa(int n)
+static	int	ft_size_itoa(int n)
 {
 	int i;
 
 	i = n <= 0 ? 2 : 1;
 	while (n)
-		{
-			n = n / 10;
-			i++;
-		}
+	{
+		n = n / 10;
+		i++;
+	}
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	long	nb;
 	char	*p;

@@ -5,30 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/11 15:11:57 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/18 21:03:11 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/24 14:36:12 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/24 18:49:34 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_stop(unsigned char c, unsigned char *s, size_t n)
+static	size_t	ft_stop(unsigned char c, unsigned char *s, size_t n)
 {
-    size_t  i;
+	size_t	i;
 
-    if (!s)
-        return (0);
-    i = 0;
-    while (i < n)
-		{
-			if (s[i] == c)
-				return (i);
-			i++;
-		}
-    return (i);
+	if (!s)
+		return (0);
+	i = 0;
+	while (i < n)
+	{
+		if (s[i] == c)
+			return (i);
+		i++;
+	}
+	return (i);
 }
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void			*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t			overlap;
 	size_t			stop;
@@ -39,13 +39,13 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	if (n == 0)
 		return (NULL);
 	uc = (unsigned char)c;
-    cdst = (unsigned char*)dst;
-    csrc = (unsigned char*)src;
+	cdst = (unsigned char*)dst;
+	csrc = (unsigned char*)src;
 	stop = ft_stop(uc, csrc, n);
 	overlap = stop < n ? stop : n - 1;
 	if (ft_memnlap_fwd(dst, src, overlap)
 						|| ft_memnlap_fwd(src, dst, overlap))
-		abort();
+		return (NULL);
 	ft_memcpy(dst, src, overlap + 1);
-    return (stop < n ? (void*)(cdst + overlap + 1) : NULL);
+	return (stop < n ? (void*)(cdst + overlap + 1) : NULL);
 }

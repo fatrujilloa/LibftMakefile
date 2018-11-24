@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 21:24:12 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/10 21:54:01 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/10 18:02:18 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/24 15:03:30 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
+	size_t	l1;
+	size_t	l2;
 	size_t	i;
-	size_t	min;
 
+	l1 = ft_strlen(s1);
+	l2 = ft_strlen(s2);
 	i = 0;
-	if (!len)
-		return (dst);
-    min = MIN(ft_strlen(src), len);
-	if (ft_memnlap_fwd(dst, src, min))
-		return (dst);
-	while (i < min)
+	if (ft_memnlap_fwd(s1, s2, l1 + MIN(l2, n)))
+		return (s1);
+	while (i < MIN(l2, n))
 	{
-		dst[i] = src[i];
+		s1[l1 + i] = s2[i];
 		i++;
 	}
-	while (i < len)
-		dst[i++] = 0;
-	return (dst);
+	s1[l1 + i] = 0;
+	return (s1);
 }

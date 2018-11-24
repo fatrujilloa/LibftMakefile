@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 17:12:34 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/18 21:04:46 by ftrujill         ###   ########.fr       */
+/*   Updated: 2018/11/24 15:06:13 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-# define MIN(x, y) x < y ? x : y
-# define MAX(x, y) x > y ? x : y
-# define ABS(x) x > 0 ? x : -x
+# define MIN(x, y) (x < y ? x : y)
+# define MAX(x, y) (x > y ? x : y)
+# define ABS(x) (x > 0 ? x : -x)
 
 typedef struct	s_list
 {
@@ -29,9 +29,8 @@ typedef struct	s_list
 
 size_t			ft_memlap_fwd(void *s1, void *s2);
 size_t			ft_memnlap_fwd(const void *s1, const void *s2, size_t n);
-size_t			ft_min_positive(size_t a, size_t b);
 size_t			ft_index(char c, char *s);
-size_t          ft_index_uc(unsigned char c, unsigned char *s);
+size_t			ft_index_uc(unsigned char c, unsigned char *s);
 void			ft_strinv(char *s);
 void			ft_print_params(int argc, char **argv);
 void			ft_print_tab(char **tab);

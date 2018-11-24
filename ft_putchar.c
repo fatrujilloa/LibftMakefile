@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/11 11:34:09 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/07/11 11:42:37 by ftrujill         ###   ########.fr       */
+/*   Created: 2018/11/10 15:20:23 by ftrujill          #+#    #+#             */
+/*   Updated: 2018/11/24 14:37:49 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
-{
-	int i;
-	int n;
+#include "libft.h"
 
-	i = 0;
-	n = 1;
-	while (str[i])
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			i++;
-		else if (str[i] >= 'A' && str[i] <= 'Z')
-			i++;
-		else
-		{
-			n = 0;
-			i++;
-		}
-	}
-	return (n);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }
