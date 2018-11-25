@@ -25,6 +25,10 @@ int		main(int argc, char **argv)
 		printf("%s. Provide 2 strings & 2 numbers. 0 = NULL, 1 = FirstString, 2 = SecondString\n", argv[0]);
 		return (0);
 	}
+	/*ft_strjoin(NULL, NULL);
+	ft_strjoin(NULL, "");
+    ft_strjoin("", NULL);*/
+	ft_strjoin("a", "b");
 	ndst = atoi(argv[3]);
 	nsrc = atoi(argv[4]);
 	str1 = (ndst == 0) ? NULL : argv[ndst];

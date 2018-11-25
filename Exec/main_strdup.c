@@ -28,9 +28,9 @@ int		main(int argc, char** argv)
 	ptr = ndest == 0 ? NULL : argv[1];
 	puts(ptr);
 	str = strdup(ptr);
-	puts(str);
+	/*puts(str);
 	printf("Now Clearing \n");
 	ft_strclr(str);
-	puts(str);
+	puts(str);*/
 	return (0);
 }
