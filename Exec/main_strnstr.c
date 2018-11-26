@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 13:59:12 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/11/11 19:20:53 by ftrujill         ###   ########.fr       */
+/*   Updated: 2018/11/26 15:10:28 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ int		main(int argc, char **argv)
 	str1 = (ndst == 0) ? NULL : argv[ndst];
 	str2 = (nsrc == 0) ? NULL : argv[nsrc];
 	printf("\nHAYSTACK: %s, NEEDLE: %s, NUMBER OF BYTES: %d\n\n", str1, str2, byts);
-	puts(ft_strnstr(str1, str2, byts));
+	puts(strnstr(str1, str2, byts));
 	return (0);
 }
